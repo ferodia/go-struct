@@ -8,8 +8,7 @@ import (
 func TestQueueEmpty(t *testing.T){
 	q := Queue{head:nil, length:0}
 	assert.Equal(t, true, q.isEmpty())
-
-
+	assert.Equal(t, 0, q.Size())
 }
 
 func TestEnqueue(t *testing.T){
@@ -27,6 +26,7 @@ func TestDequeue(t *testing.T){
 	assert.Equal(t, "World", q.dequeue())
 	assert.Equal(t, "Hello ", q.toString())
 	assert.Equal(t, "Hello", q.dequeue())
+	assert.Equal(t, nil, q.dequeue())
 }
 
 

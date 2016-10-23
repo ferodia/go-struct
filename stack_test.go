@@ -6,10 +6,14 @@ import (
 )
 
 func TestStackEmpty(t *testing.T){
-	s := Stack{head:nil, length:0}
+	s := NewStack()
 	assert.Equal(t, true, s.IsEmpty())
+}
 
-
+func TestStackFilled(t *testing.T){
+	s := CreateStack(1,2,3)
+	assert.Equal(t, false, s.IsEmpty())
+	assert.Equal(t, "3 2 1 ", s.ToString())
 }
 
 func TestPush(t *testing.T){
@@ -27,6 +31,7 @@ func TestPop(t *testing.T){
 	assert.Equal(t, "Hello", s.Pop())
 	assert.Equal(t, "World ", s.ToString())
 	assert.Equal(t, "World", s.Pop())
+	assert.Equal(t, nil, s.Pop())
 }
 
 func TestTop(t * testing.T){

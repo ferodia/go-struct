@@ -1,6 +1,8 @@
 package gostruct
 
-import "strconv"
+import (
+	"strconv"
+)
 
 type Stack struct {
 	head * item
@@ -16,9 +18,9 @@ func NewStack()(Stack){
 	return Stack{head:nil, length:0}
 }
 
-func NewStack(values []interface{})(Stack){
+func CreateStack(values...interface{})(Stack){
 	stack := Stack{head:nil, length:0}
-	for e := range values{
+	for _,e := range values{
 		stack.Push(e)
 	}
 	return stack

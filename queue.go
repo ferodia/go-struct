@@ -41,7 +41,7 @@ func (q Queue)isEmpty()bool{
 	return q.length == 0
 }
 
-func (q Queue) size() int {
+func (q Queue) Size() int {
 	return q.length
 }
 
